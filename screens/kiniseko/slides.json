@@ -1,0 +1,98 @@
+[
+    {
+        "order": 0,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-xmas-message-screen-ki-v2.jpg"
+    },
+    {
+        "order": 1,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2997-ki-events-dec-2018-calendar-screen-v2.jpg"
+    },
+    {
+        "order": 2,
+        "duration": 15,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/lift-status\/#tag_g_hirafu"
+    },
+    {
+        "order": 3,
+        "duration": 15,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/lift-status\/#tag_annupuri"
+    },
+    {
+        "order": 4,
+        "duration": 15,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/lift-status\/#tag_hanazono"
+    },
+    {
+        "order": 5,
+        "duration": 15,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/lift-status\/#tag_niseko_v"
+    },
+    {
+        "order": 6,
+        "duration": 10,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/snowfall.new\/RenderServerSide.php"
+    },
+    {
+        "order": 7,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-gosnow-screen.jpg"
+    },
+    {
+        "order": 8,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-an-dining-screen.jpg"
+    },
+    {
+        "order": 9,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2700-ki-spa-screen.jpg"
+    },
+    {
+        "order": 10,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2568-ki-gift-shop-screen-v2.jpg"
+    },
+    {
+        "order": 11,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-experience-niseko-screen.jpg"
+    },
+    {
+        "order": 12,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-passport-screen.jpg"
+    },
+    {
+        "order": 13,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-skyexpress-screen-v2.jpg"
+    },
+    {
+        "order": 14,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-sprint-screen.jpg"
+    },
+    {
+        "order": 15,
+        "duration": 20,
+        "type": "image",
+        "value": "images\/2986-niseko-rules-screen.jpg"
+    }
+]

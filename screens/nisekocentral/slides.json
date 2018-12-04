@@ -1,0 +1,104 @@
+[
+  {
+    "order": 0,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-xmas-message-screen-nc-v2.jpg"
+  },
+  {
+    "order": 1,
+    "duration": 10,
+    "type": "url",
+    "value": "http://display.htmniseko.com/display/weather/"
+  },
+  {
+    "order": 2,
+    "duration": 15,
+    "type": "url",
+    "value": "http://display.htmniseko.com/display/lift-status/"
+  },
+  {
+    "order": 3,
+    "duration": 15,
+    "type": "url",
+    "value": "http://display.htmniseko.com/display/lift-status/#tag_g_hirafu"
+  },
+  {
+    "order": 4,
+    "duration": 15,
+    "type": "url",
+    "value": "http://display.htmniseko.com/display/lift-status/#tag_annupuri"
+  },
+  {
+    "order": 5,
+    "duration": 15,
+    "type": "url",
+    "value": "http://display.htmniseko.com/display/lift-status/#tag_hanazono"
+  },
+  {
+    "order": 6,
+    "duration": 15,
+    "type": "url",
+    "value": "http://display.htmniseko.com/display/lift-status/#tag_niseko_v"
+  },
+  {
+    "order": 7,
+    "duration": 10,
+    "type": "url",
+    "value": "http://display.htmniseko.com/display/snowfall.new/RenderServerSide.php"
+  },
+  {
+    "order": 8,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-gosnow-screen.jpg"
+  },
+  {
+    "order": 9,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-kumo-screen-c-v2.jpg"
+  },
+  {
+    "order": 10,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-ryko-spa-screen-d.jpg"
+  },
+  {
+    "order": 11,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-an-dining-screen.jpg"
+  },
+  {
+    "order": 12,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-experience-niseko-screen.jpg"
+  },
+  {
+    "order": 13,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-passport-screen.jpg"
+  },
+  {
+    "order": 14,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-skyexpress-screen-v2.jpg"
+  },
+  {
+    "order": 15,
+    "duration": 10,
+    "type": "image",
+    "value": "images/2986-sprint-screen.jpg"
+  },
+  {
+    "order": 16,
+    "duration": 20,
+    "type": "image",
+    "value": "images/2986-niseko-rules-screen.jpg"
+  }
+]
