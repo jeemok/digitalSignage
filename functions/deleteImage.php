@@ -25,29 +25,30 @@
 
       // If the image is in used
       if ($imgInUsed) {
-        echo "<img src=\"images/failed.png\" style=\"max-width: 200px;\" />";
-        echo "<p>Could not delete " . $filename . ". Image is in used.</p>";
-
         // Redirect back to main page after 2 seconds
         header("Refresh: 2; URL = ../main.php");
+
+        echo "<img src=\"images/failed.png\" style=\"max-width: 200px;\" />";
+        echo "<p>Could not delete " . $filename . ". Image is in used.</p>";
         echo "<p>Page will auto redirect in 2 seconds.</p>";
       }
       // If the file exist
       else if (file_exists($filename)) {
         unlink($filename);
-        echo "<img src=\"images/success.png\" style=\"max-width: 500px;\" />";
-        echo "<p>File " . $filename . " has been deleted.</p>";
 
         // Redirect back to main page
         header("Location: ../main.php");
+
+        echo "<img src=\"images/success.png\" style=\"max-width: 500px;\" />";
+        echo "<p>File " . $filename . " has been deleted.</p>";
       }
       // If the file doesn't exist
       else {
-        echo "<img src=\"images/failed.png\" style=\"max-width: 200px;\" />";
-        echo "<p>Could not delete " . $filename . ". File does not exist.</p>";
-
         // Redirect back to main page after 2 seconds
         header("Refresh: 2; URL = ../main.php");
+
+        echo "<img src=\"images/failed.png\" style=\"max-width: 200px;\" />";
+        echo "<p>Could not delete " . $filename . ". File does not exist.</p>";
         echo "<p>Page will auto redirect in 2 seconds.</p>";
       }
     }
