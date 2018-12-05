@@ -4,7 +4,7 @@
 ?>
 <html lang = "en">
   <head>
-    <title>HTM Signage Player Administrator</title>
+    <title>Signage Player Administrator</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -78,8 +78,5 @@
         <button class="ui primary button" type="submit" name="login">Login</button>
       </form>
     </div>
-
-    <!-- HTM Logo -->
-    <img src="images/htmniseko.png" style="margin: -50px auto 50px; display: block; max-width: 200px; opacity: 0.1;" />
   </body>
 </html>
