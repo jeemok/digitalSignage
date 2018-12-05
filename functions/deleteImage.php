@@ -17,7 +17,7 @@
     // Reconstruct the image URL to check with the folders
     $imgValue = $values[2] . '/' . $values[3];
     foreach ($data as $val) {
-      if ($val["type"] == "image" && $val["value"] == $imgValue) {
+      if (($val["type"] == "image" || $val["type"] == "video") && $val["value"] == $imgValue) {
         $imgInUsed = true;
       }
     }
@@ -29,7 +29,7 @@
 
       echo '<body style="padding: 100px; text-align: center; font-family: Arial;">';
       echo "<img src=\"images/failed.png\" style=\"max-width: 200px;\" />";
-      echo "<p>Could not delete " . $filename . ". Image is in used.</p>";
+      echo "<p>Could not delete " . $filename . ". File is in used.</p>";
       echo "<p>Page will auto redirect in 2 seconds.</p>";
       echo '</body>';
     }

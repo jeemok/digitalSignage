@@ -27,13 +27,13 @@
       echo '</body>';
     }
     // Check file size
-    else if (round($_FILES["fileToUpload"]["size"] / 1024 / 1024, 1) > 2) { // count in megabytes
+    else if (round($_FILES["fileToUpload"]["size"] / 1024 / 1024, 1) > 5) { // count in megabytes
       // Redirect back to index.php after 2 seconds
       header("Refresh: 2; URL = ../main.php");
 
       echo '<body style="padding: 100px; text-align: center; font-family: Arial;">';
       echo "<img src=\"images/failed.png\" style=\"max-width: 200px;\" />";
-      echo "<p>Sorry, your file is too large. Image has to be less than 2 MB.</p>";
+      echo "<p>Sorry, your file is too large. Image has to be less than 5 MB.</p>";
       echo '</body>';
     }
     // Check file formats

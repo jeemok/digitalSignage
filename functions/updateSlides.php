@@ -5,7 +5,7 @@
   // Image folder path
   $rootPath = dirname(dirname(__FILE__));
   $jsonPath = $rootPath . "/screens/$screen/slides.json";
-  $path = $rootPath . "/screens/$screen/images/*.{jpg,png,gif}";
+  $path = $rootPath . "/screens/$screen/images/*.{jpg,png,gif,mp4}";
   $images = array_filter(glob($path, GLOB_BRACE));
 
   // Decode the JSON string
@@ -30,14 +30,14 @@
         }
         // Validate 'Duration' field value
         if ($key == "duration") {
-          if ($val[$key] < 1 || $val[$key] > 120) {
-            $errorMsg = $errorMsg . "<p>Invalid duration <strong>$val[$key]</strong> seconds at index [$index]. Duration must be within: 1 - 120 seconds.</p>";
+          if ($val[$key] < 1 || $val[$key] > 600) {
+            $errorMsg = $errorMsg . "<p>Invalid duration <strong>$val[$key]</strong> seconds at index [$index]. Duration must be within: 1 - 600 seconds.</p>";
           }
         }
         // Validate 'Type' field value
         if ($key == "type") {
-          if ($val[$key] != "url" && $val[$key] != "image") {
-            $errorMsg = $errorMsg . "<p>Invalid type: <strong>$val[$key]</strong> found at index [$index]. Supported types: image, url.</p>";
+          if ($val[$key] != "url" && $val[$key] != "image" && $val[$key] != "video") {
+            $errorMsg = $errorMsg . "<p>Invalid type: <strong>$val[$key]</strong> found at index [$index]. Supported types: image, url & video.</p>";
           }
         }
         // Validate 'Value' field value
@@ -48,7 +48,7 @@
               $errorMsg = $errorMsg . "<p>Invalid URL: <strong>$val[$key]</strong> found at index [$index]. URL must starts with 'http'.</p>";
             }
           }
-          if ($val["type"] == "image") {
+          if ($val["type"] == "image" || $val["type"] == "video") {
             // Check if there is existing image in the folder
             $notFound = true;
             // Loop through the folder
@@ -64,7 +64,7 @@
               }
             }
             if ($notFound) {
-              $errorMsg = $errorMsg . "<p>Invalid image: <strong>$val[$key]</strong> found at index [$index]. File not exist.</p>";
+              $errorMsg = $errorMsg . "<p>Invalid file: <strong>$val[$key]</strong> found at index [$index]. File not exist.</p>";
             }
           }
         }
