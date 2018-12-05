@@ -2,14 +2,24 @@
 <head>
   <script type="text/javascript">
 			function f_onload() {
+        const CACHE_TIME = escape(new Date());
+        const CHECK_TIME_SECONDS = 15; // check every 15 seconds
+        const RELOAD_CLOCK_MINUTE = 27; // reload the page when the clock minute is 0
+        let shouldReload = false; // Flag for reloading page
+
         // render an image
         function renderImage(url) {
-          return "<span style=\"background: url(\'" + url + "\') no-repeat center; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; display: block; width: 100vw; height: 100vh;\"></span>";
+          return "<span style=\"background: url(\'" + url + "?" + CACHE_TIME + "\') no-repeat center; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; display: block; width: 100vw; height: 100vh;\"></span>";
         }
 
         // render a webpage
         function renderWeb(url) {
           return "<iframe src=\"" + url + "\" width=\"100%\" height=\"100%\" style=\"border-width: 0;\"></iframe>";
+        }
+
+        // render a video
+        function renderVideo(video) {
+          return "<video autoplay=\"\" muted=\"\" width=\"100%\" height=\"100%\">  <source src=\"" + video + "?" + CACHE_TIME + "\" type=\"video/mp4\">  Your browser does not support HTML5 video.</video>";
         }
 
         // slides list
@@ -51,6 +61,9 @@
           else if (content.type === 'image') {
             return renderImage(content.value);
           }
+          else if (content.type === 'video') {
+            return renderVideo(content.value);
+          }
           return null;
         }
 
@@ -59,8 +72,8 @@
           // Animation waiting time for css manipulation
           const ANIMATION_SECONDS = 2;
           const current = document.getElementById('content1').innerHTML;
-          // Use the console.log below to get the real rendered html and replace it back in the contents
-          // console.log('current', current);
+          // NOTE: Use the console.log below to get the real rendered html and replace it into the function
+          /* console.log('current', current); */
 
           // Find the content index
           const index = contents.findIndex(c => {
@@ -71,15 +84,23 @@
             else if (c.type === 'image') {
               return renderImage(c.value) === current;
             }
+            else if (c.type === 'video') {
+              return renderVideo(c.value) === current;
+            }
             return false;
           });
 
           // animation for fading out
           document.getElementById('content1').classList.add('end');
 
-          if (index === -1 || index === contents.length - 1) {
+          // if it is the last slide and we should reload to fetch the new contents
+          if (index === contents.length - 1 && shouldReload === true) {
+            // reload the site
+            window.location.reload();
+          }
+          else if (index === -1 || index === contents.length - 1) {
             // Set the content 2 to be ready (using existing slide)
-            document.getElementById('content2').innerHTML = renderHTML(index);
+            document.getElementById('content2').innerHTML = renderHTML((index === -1 ? 0 : index));
             // switch to the next slide in 2s (waiting for the animation to finish)
             setTimeout(function() {
               // show the content1 with animation
@@ -90,7 +111,7 @@
           }
           else {
             // Set the content 2 to be ready
-            document.getElementById('content2').innerHTML = renderHTML(index + 1);
+            document.getElementById('content2').innerHTML = renderHTML((index + 1));
             // switch to the next slide in 2s (waiting for the animation to finish)
             setTimeout(function() {
               // show the content1 with animation
@@ -105,6 +126,17 @@
         document.getElementById('content1').innerHTML = renderHTML(0);
         // start timer
         setTimeout(switchSlides, contents[0].duration * 1000);
+
+        // set watch to determine if we should reload the site
+        function checkTime() {
+          // if current minute is 00
+          if (new Date().getMinutes() == RELOAD_CLOCK_MINUTE) {
+            // we should fetch new content
+            shouldReload = true;
+          }
+          setTimeout(checkTime, CHECK_TIME_SECONDS * 1000);
+        }
+        setTimeout(checkTime, CHECK_TIME_SECONDS * 1000);
 			}
   </script>
   <style>
@@ -120,7 +152,7 @@
     }
   </style>
 </head>
-<body onLoad="f_onload()" style="margin: 0;">
+<body onLoad="f_onload()" style="margin: 0; background: black;">
   <div id="content1" class="fadeOut" style="position: absolute; z-index: 5; width: 100%; height: 100%;"></div>
   <div id="content2" class="fadeOut" style="position: absolute; z-index: 1; width: 100%; height: 100%;"></div>
 </body>

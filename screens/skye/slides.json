@@ -1,128 +1,104 @@
 [
-  {
-    "order": 0,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-xmas-message-screen-skye-v2.jpg"
-  },
-  {
-    "order": 1,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2996-skye-events-dec-2018-calendar-v3.jpg"
-  },
-  {
-    "order": 2,
-    "duration": 10,
-    "type": "url",
-    "value": "http://display.htmniseko.com/display/weather/"
-  },
-  {
-    "order": 3,
-    "duration": 15,
-    "type": "url",
-    "value": "http://display.htmniseko.com/display/lift-status/"
-  },
-  {
-    "order": 4,
-    "duration": 15,
-    "type": "url",
-    "value": "http://display.htmniseko.com/display/lift-status/#tag_g_hirafu"
-  },
-  {
-    "order": 5,
-    "duration": 15,
-    "type": "url",
-    "value": "http://display.htmniseko.com/display/lift-status/#tag_annupuri"
-  },
-  {
-    "order": 6,
-    "duration": 15,
-    "type": "url",
-    "value": "http://display.htmniseko.com/display/lift-status/#tag_hanazono"
-  },
-  {
-    "order": 7,
-    "duration": 15,
-    "type": "url",
-    "value": "http://display.htmniseko.com/display/lift-status/#tag_niseko_v"
-  },
-  {
-    "order": 8,
-    "duration": 10,
-    "type": "url",
-    "value": "http://display.htmniseko.com/display/snowfall.new/RenderServerSide.php"
-  },
-  {
-    "order": 9,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-yamasport-screen-v3.jpg"
-  },
-  {
-    "order": 10,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-gosnow-screen.jpg"
-  },
-  {
-    "order": 11,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-kumo-screen-c-v2.jpg"
-  },
-  {
-    "order": 12,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-ryko-spa-screen-d.jpg"
-  },
-  {
-    "order": 13,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-skye-gym-screen-a.jpg"
-  },
-  {
-    "order": 14,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-cafe-screen-v2.jpg"
-  },
-  {
-    "order": 15,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-shuttle-screen.jpg"
-  },
-  {
-    "order": 16,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-experience-niseko-screen.jpg"
-  },
-  {
-    "order": 17,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-passport-screen.jpg"
-  },
-  {
-    "order": 18,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-skyexpress-screen-v2.jpg"
-  },
-  {
-    "order": 19,
-    "duration": 10,
-    "type": "image",
-    "value": "images/2986-sprint-screen.jpg"
-  },
-  {
-    "order": 20,
-    "duration": 20,
-    "type": "image",
-    "value": "images/2986-niseko-rules-screen.jpg"
-  }
+    {
+        "order": 0,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-xmas-message-screen-skye-v2.jpg"
+    },
+    {
+        "order": 1,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2996-skye-events-dec-2018-calendar-v3.jpg"
+    },
+    {
+        "order": 2,
+        "duration": 10,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/weather\/"
+    },
+    {
+        "order": 3,
+        "duration": 75,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/lift-status\/"
+    },
+    {
+        "order": 4,
+        "duration": 10,
+        "type": "url",
+        "value": "http:\/\/display.htmniseko.com\/display\/snowfall.new\/RenderServerSide.php"
+    },
+    {
+        "order": 5,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-yamasport-screen-v3.jpg"
+    },
+    {
+        "order": 6,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-gosnow-screen.jpg"
+    },
+    {
+        "order": 7,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-kumo-screen-c-v2.jpg"
+    },
+    {
+        "order": 8,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-ryko-spa-screen-d.jpg"
+    },
+    {
+        "order": 9,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-skye-gym-screen-a.jpg"
+    },
+    {
+        "order": 10,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-cafe-screen-v2.jpg"
+    },
+    {
+        "order": 11,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-shuttle-screen.jpg"
+    },
+    {
+        "order": 12,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-experience-niseko-screen.jpg"
+    },
+    {
+        "order": 13,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-passport-screen.jpg"
+    },
+    {
+        "order": 14,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-skyexpress-screen-v2.jpg"
+    },
+    {
+        "order": 15,
+        "duration": 10,
+        "type": "image",
+        "value": "images\/2986-sprint-screen.jpg"
+    },
+    {
+        "order": 16,
+        "duration": 20,
+        "type": "image",
+        "value": "images\/2986-niseko-rules-screen.jpg"
+    }
 ]
