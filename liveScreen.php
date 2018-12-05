@@ -1,8 +1,11 @@
 <?php
+  // Modify the path here to show the screen correctly
+  // $FOLDER_PATH = "/screens/"; // localhost
+  $FOLDER_PATH = "/display/digitalsignage/screens/";
+
   // Base URL
-  $baseUrl = $_SERVER[HTTP_HOST];
-  $folderPath = "/screens/";
-  $liveUrl = $baseUrl . $folderPath . $screen;
+  $baseUrl = strtolower(substr($_SERVER[HTTP_HOST], 0, 7 )) != "http://" ? "http://$_SERVER[HTTP_HOST]" : $_SERVER[HTTP_HOST];
+  $liveUrl = $baseUrl . $FOLDER_PATH . $screen;
 
   // Slides JSON file
   $json = file_get_contents(__DIR__ . "/screens/" . $screen . "/slides.json");
@@ -10,6 +13,10 @@
 
   $imageArray = array_filter($decodedJson, function ($var) {
     return ($var["type"] === "image");
+  });
+
+  $videoArray = array_filter($decodedJson, function ($var) {
+    return ($var["type"] === "video");
   });
 
   $urlArray = array_filter($decodedJson, function ($var) {
@@ -57,8 +64,15 @@
         </div>
       </div>
       <div class="item" style="margin: 5px;">
+        <i class="video icon" style="display: inline-flex"></i>
+        Videos:
+        <div class="content" style="display: inline">
+          <?php echo count($videoArray) ?>
+        </div>
+      </div>
+      <div class="item" style="margin: 5px;">
         <i class="linkify icon" style="display: inline-flex"></i>
-        URL:
+        URLs:
         <div class="content" style="display: inline">
           <?php echo count($urlArray) ?>
         </div>
@@ -81,11 +95,14 @@
     <!-- Notes -->
     <div class="ui divider"></div>
     <ul class="list">
-      <li>Screen takes new updates from the server in every hour.</li>
-      <li>Each slide duration are limited to 1 -  120 seconds.</li>
-      <li>Please contact IT Support for adding custom URLs.</li>
-      <li>Only images that are not in used can be deleted.</li>
-      <li>Currently only images and URLs are supported.</li>
+      <li>Screen takes new updates from the server in every hour (every <i>xx:00</i> time) after the end of the slides.</li>
+      <li>Each slide duration are limited to 1 - 600 seconds.</li>
+      <li>Only files that are not in used can be deleted.</li>
+      <li>Currently only images, videos and URLs are supported.</li>
+      <li>Image formats: <i>.jpg</i>, <i>.jpeg</i>, <i>.png</i> & <i>.gif</i> are supported.</li>
+      <li>Video format: <i>.mp4</i> is supported.</li>
+      <li>All videos are muted.</li>
+      <li>Please contact IT Support for adding custom URLs or videos.</li>
     </ul>
   </div>
 </div>

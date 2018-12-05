@@ -13,7 +13,7 @@
 ?>
 
 <head>
-  <title>Signage Player Administrator</title>
+  <title>HTM Signage Player Administrator</title>
   <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
     <!-- Logo background -->
     <i class="play circle outline icon" style="font-size: 50em; position: fixed; left: -100; opacity: 0.1"></i>
     <!-- Logout button -->
-    <a class="ui red small button" href="/functions/logout.php" style="float: right;">
+    <a class="ui red small button" href="functions/logout.php" style="float: right;">
       <i class="logout icon"></i>
       Logout
     </a>
@@ -85,6 +85,9 @@
       }
     ?>
   </div>
+
+  <!-- HTM Logo -->
+  <img src="images/htmniseko.png" style="margin: -50px auto 50px; display: block; max-width: 200px; opacity: 0.1;" />
 
   <!-- Add event listeners -->
   <script>

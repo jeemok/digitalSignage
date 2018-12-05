@@ -12,8 +12,8 @@
   <div class="ui divider"></div>
   <?php
     // Screens folder path
-    $path = "screens/$screen/images/*.{jpg,png,gif}";
-    $images = array_filter(glob($path, GLOB_BRACE));
+    $images = array_filter(glob("screens/$screen/images/*.{jpg, png, gif}", GLOB_BRACE));
+    $videos = array_filter(glob("screens/$screen/images/*.{mp4}", GLOB_BRACE));
 
     // Print each image
     foreach ($images as $value) {
@@ -27,13 +27,28 @@
         </div>
       ';
     }
+    // Print each video
+    foreach ($videos as $value) {
+      $pieces = explode("/", $value);
+      echo '
+        <div class="ui segment" style="display: inline-block; margin: 10px;">
+          <video loop autoplay muted width="192px" height="108px">
+            <source src="' . $value . '" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <br />'
+          . $pieces[3] .
+          '<a class="floating ui red label" onClick={deleteImage("' . $value . '")}>X</a>
+        </div>
+      ';
+    }
   ?>
   <div class="ui segment">
     <form action="functions/uploadImage.php" method="post" enctype="multipart/form-data" style="margin-bottom: 0;">
       <h4 class="ui header">
         Select new image to upload:
       </h4>
-      <input type="file" name="fileToUpload" id="fileToUpload">
+      <input type="file" name="fileToUpload" id="fileToUpload" accept=".jpg,.jpeg,.gif,.png">
       <?php echo '<input style="display: none;" type="text" name="screen" id="screen" value="' . $screen . '">'; ?>
       <button name="submit" type="submit" class="ui primary small button" style="display: block; margin-top: 10px;">
         <i class="file image icon"></i>
