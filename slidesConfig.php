@@ -12,9 +12,9 @@
   $json = file_get_contents(__DIR__ . "/screens/" . $screen . "/slides.json");
   $decodedJson = json_decode($json, true);
 
-  // Images folder path
-  $path = "screens/" . $screen . "/images/*.{jpg,png,gif}";
-  $images = array_filter(glob($path, GLOB_BRACE));
+  // Images & videos folder path
+  $images = array_filter(glob("screens/" . $screen . "/images/*.{jpg,png,gif}", GLOB_BRACE));
+  $videos = array_filter(glob("screens/" . $screen . "/images/*.{mp4}", GLOB_BRACE));
 ?>
 
 <!-- State management -->
@@ -84,6 +84,20 @@
         ?>
       '</select>';
     }
+    else if (row.type == 'video') {
+      return '<label>Value</label>' +
+      '<select id="' + screen + '_row_' + index + '_value" class="ui fluid dropdown">' +
+        '<option value=""></option>' +
+        <?php
+          // Render each image as an option
+          foreach ($videos as $value) {
+            $pieces = explode("/", $value);
+            $videoValue = $pieces[2] . "/" . $pieces[3];
+            echo "'<option ' + (row.value == '" . $videoValue . "' ? 'selected' : '') + ' value=\"" . $videoValue . "\">" . $videoValue . "</option>' + ";
+          }
+        ?>
+      '</select>';
+    }
     return null;
   }
 
@@ -123,7 +137,7 @@
         '      id="' + screen + '_row_' + index + '_duration"' +
         '      type="number"' +
         '      value="' + row.duration + '"' +
-        '      min="1" max="120"' +
+        '      min="1" max="600"' +
         '    ></input>' +
         '  </div>' +
         '  <div class="two wide field"><label>Type</label>' +
@@ -132,6 +146,7 @@
         '      class="ui fluid dropdown"' +
         '    >' +
         '      <option ' + (row.type == 'image' ? 'selected' : '') + ' value="image">image</option>' +
+        '      <option ' + (row.type == 'video' ? 'selected' : '') + ' value="video">video</option>' +
         '      <option ' + (row.type == 'url' ? 'selected' : '') + ' value="url">url</option>' +
         '    </select>' +
         '  </div>' +
@@ -217,4 +232,5 @@
       Save
     </button>
   </form>
+
 </div>
